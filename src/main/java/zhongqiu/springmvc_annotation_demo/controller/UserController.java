@@ -27,14 +27,14 @@ public class UserController {
 		return "index";
 	}
 
-	// Ìø×ªµ½addÒ³Ãæ
+	// è·³è½¬åˆ°addé¡µé¢
 	@RequestMapping("toAdd")
 	public String toAdd() {
 
 		return "add";
 	}
 
-	// ½ÓÊÜintÀàĞÍ²ÎÊı
+	// æ¥å—intç±»å‹å‚æ•°
 	//http://localhost:9999/user/recieveInt.do?id=3
 	@RequestMapping("recieveInt")
 	public String recieveInt(Integer id) {
@@ -44,14 +44,14 @@ public class UserController {
 		return "success";
 	}
 
-	// @RequestParam×¢½â
-	// A)³£ÓÃÀ´´¦Àí¼òµ¥ÀàĞÍµÄ°ó¶¨£¬Í¨¹ıRequest.getParameter() »ñÈ¡µÄString¿ÉÖ±½Ó×ª»»Îª¼òµ¥ÀàĞÍµÄÇé¿ö
-	// £¨ String--> ¼òµ¥ÀàĞÍµÄ×ª»»²Ù×÷ÓÉConversionServiceÅäÖÃµÄ×ª»»Æ÷À´Íê³É£©£»
-	// ÒòÎªÊ¹ÓÃrequest.getParameter()·½Ê½»ñÈ¡²ÎÊı£¬ËùÒÔ¿ÉÒÔ´¦Àíget ·½Ê½ÖĞqueryStringµÄÖµ£¬Ò²¿ÉÒÔ´¦Àípost·½Ê½ÖĞ
-	// body dataµÄÖµ£»
-	// B£©ÓÃÀ´´¦ÀíContent-Type: Îª
-	// application/x-www-form-urlencoded±àÂëµÄÄÚÈİ£¬Ìá½»·½Ê½GET¡¢POST£»
-	// C) ¸Ã×¢½âÓĞÁ½¸öÊôĞÔ£º value¡¢required£» valueÓÃÀ´Ö¸¶¨Òª´«ÈëÖµµÄidÃû³Æ£¬requiredÓÃÀ´Ö¸Ê¾²ÎÊıÊÇ·ñ±ØĞë°ó¶¨£»
+	// @RequestParamæ³¨è§£
+	// A)å¸¸ç”¨æ¥å¤„ç†ç®€å•ç±»å‹çš„ç»‘å®šï¼Œé€šè¿‡Request.getParameter() è·å–çš„Stringå¯ç›´æ¥è½¬æ¢ä¸ºç®€å•ç±»å‹çš„æƒ…å†µ
+	// ï¼ˆ String--> ç®€å•ç±»å‹çš„è½¬æ¢æ“ä½œç”±ConversionServiceé…ç½®çš„è½¬æ¢å™¨æ¥å®Œæˆï¼‰ï¼›
+	// å› ä¸ºä½¿ç”¨request.getParameter()æ–¹å¼è·å–å‚æ•°ï¼Œæ‰€ä»¥å¯ä»¥å¤„ç†get æ–¹å¼ä¸­queryStringçš„å€¼ï¼Œä¹Ÿå¯ä»¥å¤„ç†postæ–¹å¼ä¸­
+	// body dataçš„å€¼ï¼›
+	// Bï¼‰ç”¨æ¥å¤„ç†Content-Type: ä¸º
+	// application/x-www-form-urlencodedç¼–ç çš„å†…å®¹ï¼Œæäº¤æ–¹å¼GETã€POSTï¼›
+	// C) è¯¥æ³¨è§£æœ‰ä¸¤ä¸ªå±æ€§ï¼š valueã€requiredï¼› valueç”¨æ¥æŒ‡å®šè¦ä¼ å…¥å€¼çš„idåç§°ï¼Œrequiredç”¨æ¥æŒ‡ç¤ºå‚æ•°æ˜¯å¦å¿…é¡»ç»‘å®šï¼›
 	@RequestMapping("recieveIntRequestParam")
 	public String recieveIntRequestParam(@RequestParam(value = "ss", required = true) Integer id) {
 
@@ -61,7 +61,7 @@ public class UserController {
 	}
 
 	//http://localhost:9999/user/recieveStr.do?username=%E6%B0%B4%E7%94%B5%E8%B4%B9
-	// ½ÓÊÜ×Ö·ûÀàĞÍ²ÎÊı
+	// æ¥å—å­—ç¬¦ç±»å‹å‚æ•°
 	@RequestMapping("recieveStr")
 	public String recieveStr(String username) {
 
@@ -69,7 +69,7 @@ public class UserController {
 		return "success";
 	}
 
-	// ½ÓÊÜÊı×éÀàĞÍ²ÎÊı
+	// æ¥å—æ•°ç»„ç±»å‹å‚æ•°
 	@RequestMapping("recieveArray")
 	public String recieveArray(Integer[] ids) {
 
@@ -78,7 +78,7 @@ public class UserController {
 		return "success";
 	}
 
-	// ½ÓÊÜ²ÎÊı·â×°User¶ÔÏó
+	// æ¥å—å‚æ•°å°è£…Userå¯¹è±¡
 	@RequestMapping("recieveUser")
 	public String recieveUser(User user) {
 
@@ -87,7 +87,7 @@ public class UserController {
 		return "success";
 	}
 
-	// ½ÓÊÜ°ü×°ÀàĞÍ²ÎÊı
+	// æ¥å—åŒ…è£…ç±»å‹å‚æ•°
 	@RequestMapping("recieveUserCustom")
 	public String recieveUserCustom(UserCustom userCustom) {
 
@@ -96,7 +96,7 @@ public class UserController {
 		return "success";
 	}
 
-	// ½ÓÊÜ¼¯ºÏÀàĞÍ²ÎÊı
+	// æ¥å—é›†åˆç±»å‹å‚æ•°
 	@RequestMapping("recieveList")
 	public String recieveList(UserCustom userCustom) {
 
@@ -105,7 +105,7 @@ public class UserController {
 		return "success";
 	}
 
-	// ½ÓÊÜ¼¯ºÏÀàĞÍ²ÎÊı
+	// æ¥å—é›†åˆç±»å‹å‚æ•°
 	@RequestMapping("recieveMap")
 	public String recieveMap(UserCustom userCustom) {
 
@@ -114,32 +114,32 @@ public class UserController {
 		return "success";
 	}
 
-	// Ò³Ãæ»ØÏÔ
+	// é¡µé¢å›æ˜¾
 	@RequestMapping("list")
 	public String list(Model model) {
-		// model Ïàµ±ÓÚapplicationÓò¶ÔÏó
+		// model ç›¸å½“äºapplicationåŸŸå¯¹è±¡
 
 		List<User> userList = new ArrayList<User>();
 
 		User user1 = new User();
 		user1.setId(1);
-		user1.setSex("ÄĞ");
-		user1.setUsername("ÕÅÉ½·å");
-		user1.setAddress("Îäµ±É½");
+		user1.setSex("ç”·");
+		user1.setUsername("å¼ å±±å³°");
+		user1.setAddress("æ­¦å½“å±±");
 		user1.setBirthday(new Date());
 
 		User user2 = new User();
 		user2.setId(2);
-		user2.setSex("ÄĞ2");
-		user2.setUsername("ÕÅÉ½·å222");
-		user2.setAddress("Îäµ±É½222");
+		user2.setSex("ç”·2");
+		user2.setUsername("å¼ å±±å³°222");
+		user2.setAddress("æ­¦å½“å±±222");
 		user2.setBirthday(new Date());
 
 		User user3 = new User();
 		user3.setId(3);
-		user3.setSex("ÄĞ3");
-		user3.setUsername("ÕÅÉ½·å333");
-		user3.setAddress("Îäµ±É½333");
+		user3.setSex("ç”·3");
+		user3.setUsername("å¼ å±±å³°333");
+		user3.setAddress("æ­¦å½“å±±333");
 		user3.setBirthday(new Date());
 
 		userList.add(user1);
@@ -151,16 +151,16 @@ public class UserController {
 		return "list";
 	}
 
-	// @PathVariable×¢½â
-	// µ±Ê¹ÓÃ@RequestMapping URI template ÑùÊ½Ó³ÉäÊ±£¬ ¼´ someUrl/{paramId},
-	// ÕâÊ±µÄparamId¿ÉÍ¨¹ı @Pathvariable×¢½â°ó¶¨Ëü´«¹ıÀ´µÄÖµµ½·½·¨µÄ²ÎÊıÉÏ¡£
+	// @PathVariableæ³¨è§£
+	// å½“ä½¿ç”¨@RequestMapping URI template æ ·å¼æ˜ å°„æ—¶ï¼Œ å³ someUrl/{paramId},
+	// è¿™æ—¶çš„paramIdå¯é€šè¿‡ @Pathvariableæ³¨è§£ç»‘å®šå®ƒä¼ è¿‡æ¥çš„å€¼åˆ°æ–¹æ³•çš„å‚æ•°ä¸Šã€‚
 	@RequestMapping("updateByID/{id}")
 	public String updateByID(@PathVariable Integer id, Model model) {
 		User user1 = new User();
 		user1.setId(id);
-		user1.setSex("ÄĞ");
-		user1.setUsername("ÕÅÉ½·å");
-		user1.setAddress("Îäµ±É½");
+		user1.setSex("ç”·");
+		user1.setUsername("å¼ å±±å³°");
+		user1.setAddress("æ­¦å½“å±±");
 		user1.setBirthday(new Date());
 
 		model.addAttribute("user", user1);
@@ -168,43 +168,43 @@ public class UserController {
 		return "edit";
 	}
 
-	// ²âÊÔ×ª·¢
+	// æµ‹è¯•è½¬å‘
 	@RequestMapping("forward")
 	public String forward() {
-		// ¿çÀà×ª·¢
+		// è·¨ç±»è½¬å‘
 		return "forward:/items/list.do";
 
-		// ±¾Àà×ª·¢
+		// æœ¬ç±»è½¬å‘
 		// return "forward:list.do";
 	}
 
-	// ²âÊÔÖØ¶¨Ïò
+	// æµ‹è¯•é‡å®šå‘
 	@RequestMapping("redirect")
 	public String redirect() {
-		// ¿çÀàÖØ¶¨Ïò
+		// è·¨ç±»é‡å®šå‘
 		return "redirect:/items/list.do";
 
-		// ±¾ÀàÖĞÖØ¶¨Ïò
+		// æœ¬ç±»ä¸­é‡å®šå‘
 		// return "redirect:list.do";
 	}
 
-	// Ìø×ªµ½requestJsonÒ³Ãæ
+	// è·³è½¬åˆ°requestJsoné¡µé¢
 	@RequestMapping("toJson")
 	public String toJson() {
 
 		return "requestJson";
 	}
 
-	// ½ÓÊÜjson¸ñÊ½Êı¾İ£¬Ê¹ÓÃRequestBody°Ñjson¸ñÊ½Êı¾İ·â×°µ½user¶ÔÏóÖĞ
-	// ·µ»Øuser¶ÔÏó£¬Ê¹ÓÃResponseBody°Ñuser¶ÔÏó×ª»»³Éjson¶ÔÏó
+	// æ¥å—jsonæ ¼å¼æ•°æ®ï¼Œä½¿ç”¨RequestBodyæŠŠjsonæ ¼å¼æ•°æ®å°è£…åˆ°userå¯¹è±¡ä¸­
+	// è¿”å›userå¯¹è±¡ï¼Œä½¿ç”¨ResponseBodyæŠŠuserå¯¹è±¡è½¬æ¢æˆjsonå¯¹è±¡
 	@RequestMapping("requestJson")
 	public @ResponseBody User requestJson(@RequestBody User user) {
 		System.out.println(user);
 		return user;
 	}
 
-	// ·µ»Øuser¶ÔÏó£¬Ê¹ÓÃResponseBody°Ñuser¶ÔÏó×ª»»³Éjson¶ÔÏó
-    //ºÍuserÀàÖĞµÄ@XmlRootElement³åÍ»£¬µ¼ÖÂ·µ»Øuser£¬ĞòÁĞ»¯jsonÊ§°Ü
+	// è¿”å›userå¯¹è±¡ï¼Œä½¿ç”¨ResponseBodyæŠŠuserå¯¹è±¡è½¬æ¢æˆjsonå¯¹è±¡
+    //å’Œuserç±»ä¸­çš„@XmlRootElementå†²çªï¼Œå¯¼è‡´è¿”å›userï¼Œåºåˆ—åŒ–jsonå¤±è´¥
 	@RequestMapping("requestPo")
 	public @ResponseBody User requestPo(User user) {
 		System.out.println(user.getUsername());
@@ -212,12 +212,12 @@ public class UserController {
 	}
 
 	//
-	//¶àÊÓÍ¼
+	//å¤šè§†å›¾
 	@RequestMapping("multiView")
 	public User multiView() {
 		User user=new User();
-		user.setAddress("Îäµ±É½");
-		user.setUsername("ÕÅÈı·á");
+		user.setAddress("æ­¦å½“å±±");
+		user.setUsername("å¼ ä¸‰ä¸°");
 		return user;
 	}
 }
