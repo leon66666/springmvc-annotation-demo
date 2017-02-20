@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import zhongqiu.springmvc_annotation_demo.domain.User;
 import zhongqiu.springmvc_annotation_demo.domain.UserCustom;
 
@@ -20,7 +22,7 @@ import zhongqiu.springmvc_annotation_demo.domain.UserCustom;
 @RequestMapping("/user")
 public class UserController {
 
-	//http://localhost:9999/user/hello.do
+	// http://localhost:9999/user/hello.do
 	@RequestMapping(value = "/hello.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String hello() {
 
@@ -35,7 +37,7 @@ public class UserController {
 	}
 
 	// 接受int类型参数
-	//http://localhost:9999/user/recieveInt.do?id=3
+	// http://localhost:9999/user/recieveInt.do?id=3
 	@RequestMapping("recieveInt")
 	public String recieveInt(Integer id) {
 
@@ -60,7 +62,7 @@ public class UserController {
 		return "success";
 	}
 
-	//http://localhost:9999/user/recieveStr.do?username=%E6%B0%B4%E7%94%B5%E8%B4%B9
+	// http://localhost:9999/user/recieveStr.do?username=%E6%B0%B4%E7%94%B5%E8%B4%B9
 	// 接受字符类型参数
 	@RequestMapping("recieveStr")
 	public String recieveStr(String username) {
@@ -204,18 +206,30 @@ public class UserController {
 	}
 
 	// 返回user对象，使用ResponseBody把user对象转换成json对象
-    //和user类中的@XmlRootElement冲突，导致返回user，序列化json失败
+	// 和user类中的@XmlRootElement冲突，导致返回user，序列化json失败
 	@RequestMapping("requestPo")
 	public @ResponseBody User requestPo(User user) {
 		System.out.println(user.getUsername());
 		return user;
 	}
 
+	// jackson
+	// @RequestMapping("requestJackson")
+	// public String requestJackson(User user) {
+	// ObjectMapper mapper = new ObjectMapper();
+	// // 解析器支持解析单引号
+	// mapper.configure(Feature.ALLOW_SINGLE_QUOTES, true);
+	// // 解析器支持解析结束符
+	// mapper.configure(Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
 	//
-	//多视图
+	// HashMap jsonMap = mapper.readValue(json, HashMap.class); // 转换为HashMap对象
+	// return "";
+	// }
+
+	// 多视图
 	@RequestMapping("multiView")
 	public User multiView() {
-		User user=new User();
+		User user = new User();
 		user.setAddress("武当山");
 		user.setUsername("张三丰");
 		return user;
