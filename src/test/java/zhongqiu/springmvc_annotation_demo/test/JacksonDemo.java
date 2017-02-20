@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.coyote.http11.filters.VoidInputFilter;
+import org.omg.CORBA.OBJECT_NOT_EXIST;
+
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -18,7 +21,10 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import zhongqiu.springmvc_annotation_demo.domain.Model;
 import zhongqiu.springmvc_annotation_demo.domain.User;
 
-//http://www.cnblogs.com/hoojo/archive/2011/04/22/2024628.html
+//Jackson使用
+//对象转json:ObjectMapper.writeValueAsString(user)
+//json转对象:ObjectMapper.readValue(json, User.class);
+//readValue到一个范型数据中:ObjectMapper.readValue(json,new TypeReference<HashMap<String, Model>>() {})
 public class JacksonDemo {
 	public static void main(String[] args) throws Exception {
 		objectToJson();
