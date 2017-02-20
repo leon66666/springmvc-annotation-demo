@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/items")
 public class ItemsController {
 
-	//²âÊÔ¿çÀà×ª·¢ÓÃ
+	//æµ‹è¯•è·¨ç±»è½¬å‘ç”¨
 	@RequestMapping("list")
 	public String list(){
-		System.out.println("·ÃÎÊ³É¹¦");
+		System.out.println("è®¿é—®æˆåŠŸ");
 		return "success";
 	}
 	

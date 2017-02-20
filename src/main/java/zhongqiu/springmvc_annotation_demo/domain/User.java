@@ -3,7 +3,7 @@ package zhongqiu.springmvc_annotation_demo.domain;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
-//¶àÊÓÍ¼·µ»Ø£¬¶ÔxmlÊÓÍ¼µÄÖ§³Ö£¬±ØĞëÓĞÕâ¸ö×¢½â
+//å¤šè§†å›¾è¿”å›ï¼Œå¯¹xmlè§†å›¾çš„æ”¯æŒï¼Œå¿…é¡»æœ‰è¿™ä¸ªæ³¨è§£
 //@XmlRootElement
 public class User {
 	
